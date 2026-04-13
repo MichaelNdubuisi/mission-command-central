@@ -19,7 +19,7 @@ const ShieldLogo = ({ className = "" }) => {
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-[calc(100vh-62px)] overflow-hidden bg-[#071009]">
+    <section className="relative  overflow-hidden bg-[#071009]">
       {/* base background */}
       <div className="absolute inset-0 bg-[#071009]" />
 
