@@ -1,13 +1,11 @@
 import Navbar from "../components/layout/Navbar";
+import HeroSection from "../components/ui/HeroSection";
 
 const Home = () => {
   return (
-    <main className="min-h-screen bg-[#08110b] text-white">
+    <main className="min-h-screen overflow-hidden bg-[#071009] text-white">
       <Navbar />
-
-      <section className="flex min-h-[calc(100vh-62px)] items-center justify-center">
-        <h1 className="text-5xl font-bold uppercase">Mission Command Central</h1>
-      </section>
+      <HeroSection />
     </main>
   );
 };
