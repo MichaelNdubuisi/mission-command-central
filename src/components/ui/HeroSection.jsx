@@ -38,28 +38,28 @@ const HeroSection = () => {
           <ShieldLogo className="mb-[34px] h-[78px] w-[78px] text-[#d1aa10] sm:h-[84px] sm:w-[84px] md:mb-[40px] md:h-[90px] md:w-[90px]" />
 
           <h1 className="uppercase leading-[0.94]">
-            <span className="block text-[54px] font-extrabold tracking-[-0.03em] text-[#ece8dc] sm:text-[66px] md:text-[84px] lg:text-[88px] xl:text-[92px]">
+            <span className="block text-[64px] font-extrabold tracking-[-0.03em] text-[#ece8dc] sm:text-[78px] md:text-[99px] lg:text-[104px] xl:text-[108px]">
               Mission Command
             </span>
-            <span className="mt-[2px] block text-[54px] font-extrabold tracking-[-0.03em] text-[#d1aa10] sm:text-[66px] md:text-[84px] lg:text-[88px] xl:text-[92px]">
+            <span className="mt-[2px] block text-[64px] font-extrabold tracking-[-0.03em] text-[#d1aa10] sm:text-[78px] md:text-[99px] lg:text-[104px] xl:text-[108px]">
               Central
             </span>
           </h1>
 
-          <p className="mt-[30px] max-w-[820px] px-2 text-[19px] font-medium leading-[1.35] text-[#9c9d91] sm:text-[20px] md:mt-[32px] md:text-[22px]">
+          <p className="mt-[30px] max-w-[820px] px-2 text-[23px] font-medium leading-[1.35] text-[#9c9d91] sm:text-[24px] md:mt-[32px] md:text-[26px]">
             Secure internal portal strictly restricted to registered United
             States Army personnel. Unauthorized access is prohibited.
           </p>
 
           <div className="mt-[56px] flex flex-col items-center gap-3.5 sm:flex-row sm:gap-4">
-            <button className="group flex h-[56px] min-w-[252px] items-center justify-center gap-3 border border-[#d1aa10] bg-[#d1aa10] px-7 text-[17px] font-extrabold uppercase tracking-[0.02em] text-[#111] transition duration-200 hover:brightness-110">
+            <button className="group flex h-[56px] min-w-[252px] items-center justify-center gap-3 border border-[#d1aa10] bg-[#d1aa10] px-7 text-[20px] font-extrabold uppercase tracking-[0.02em] text-[#111] transition duration-200 hover:brightness-110">
               Authorized Sign In
-              <span className="text-[24px] leading-none transition-transform duration-200 group-hover:translate-x-1">
+              <span className="text-[28px] leading-none transition-transform duration-200 group-hover:translate-x-1">
                 ›
               </span>
             </button>
 
-            <button className="flex h-[56px] min-w-[286px] items-center justify-center border border-[#2f392d] bg-transparent px-7 text-[17px] font-semibold uppercase tracking-[0.01em] text-[#d8d5cc] transition duration-200 hover:border-[#465041] hover:bg-white/[0.03]">
+            <button className="flex h-[56px] min-w-[286px] items-center justify-center border border-[#2f392d] bg-transparent px-7 text-[20px] font-semibold uppercase tracking-[0.01em] text-[#d8d5cc] transition duration-200 hover:border-[#465041] hover:bg-white/[0.03]">
               Public Leave Application
             </button>
           </div>

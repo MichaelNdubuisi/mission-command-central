@@ -48,12 +48,12 @@ const ValuesSection = () => {
               </div>
 
               {/* TITLE */}
-              <h3 className="mb-5 text-[26px] font-extrabold uppercase tracking-[-0.02em] text-[#f0eee6]">
+              <h3 className="mb-5 text-[32px] font-extrabold uppercase tracking-[-0.02em] text-[#f0eee6]">
                 {item.title}
               </h3>
 
               {/* TEXT */}
-              <p className="max-w-[340px] text-[17px] font-medium leading-[1.65] text-[#a4a597]">
+              <p className="max-w-[340px] text-[20px] font-medium leading-[1.65] text-[#a4a597]">
                 {item.text}
               </p>
             </div>
