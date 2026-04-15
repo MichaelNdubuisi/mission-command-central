@@ -9,7 +9,6 @@ import armorImg from "../assets/images/Interceptor Body Armor.png";
 import helmetImg from "../assets/images/ACH Combat Helmet.png";
 import nightVisionImg from "../assets/images/Night Vision Monocular.png";
 
-
 const equipmentItems = [
   {
     id: 1,
@@ -34,7 +33,7 @@ const equipmentItems = [
   {
     id: 3,
     category: "Weapons",
-    name: "M249 SQUAD AUTOMATIC\nWEAPON",
+    name: "M249 SQUAD AUTOMATIC WEAPON",
     image: m249Img,
     badge: "RESTRICTED",
     badgeType: "restricted",
@@ -54,91 +53,77 @@ const equipmentItems = [
   {
     id: 5,
     category: "Weapons",
-    title: "M17 MODULAR HANDGUN",
-    rank: "Private",
-    stock: 85,
+    name: "M17 MODULAR HANDGUN",
+    image: handgunImg,
     badge: "STANDARD",
     badgeType: "standard",
-    image: handgunImg,
+    rank: "Private",
+    stock: 85,
   },
   {
     id: 6,
     category: "Protective Gear",
-    title: "INTERCEPTOR BODY ARMOR (IBA)",
-    rank: "Private",
-    stock: 200,
+    name: "INTERCEPTOR BODY ARMOR (IBA)",
+    image: armorImg,
     badge: "STANDARD",
     badgeType: "standard",
-    image: armorImg,
+    rank: "Private",
+    stock: 200,
   },
   {
     id: 7,
     category: "Protective Gear",
-    title: "ACH COMBAT HELMET",
-    rank: "Private",
-    stock: 180,
+    name: "ACH COMBAT HELMET",
+    image: helmetImg,
     badge: "STANDARD",
     badgeType: "standard",
-    image: helmetImg,
+    rank: "Private",
+    stock: 180,
   },
   {
-    id: 4,
+    id: 8,
     category: "Optics",
-    title: "AN/PVS-14 NIGHT VISION MONOCULAR",
+    name: "AN/PVS-14 NIGHT VISION MONOCULAR",
+    image: nightVisionImg,
+    badge: "RESTRICTED",
+    badgeType: " Asc",
     rank: "Corporal",
     stock: 32,
-    badge: "RESTRICTED",
-    badgeType: "restricted",
-    image: nightVisionImg,
   },
 ];
 
 const badgeClasses = {
-  standard:
-    "border border-[#1f6f43] bg-[#0d4d2b] text-[#25de73]",
-  restricted:
-    "border border-[#8b730d] bg-[#4b3f08] text-[#f0c400]",
+  standard: "border border-[#1f6f43] bg-[#0d4d2b] text-[#25de73]",
+  restricted: "border border-[#8b730d] bg-[#4b3f08] text-[#f0c400]",
 };
 
 const EquipmentCard = ({ item }) => {
   return (
-    <article className="overflow-hidden rounded-[2px] border border-[#2a3526] bg-[#101910]">
-      <div className="relative h-[178px] border-b border-[#243020] bg-[linear-gradient(90deg,#223522_0%,#1d2d1d_100%)]">
-        <span
-          className={`absolute right-[10px] top-[13px] inline-flex h-[18px] items-center px-[8px] text-[10px] font-extrabold uppercase leading-none tracking-[0.03em] ${badgeClasses[item.badgeType]}`}
-        >
+    <article className="group overflow-hidden rounded border border-[#2a3526] bg-[#101910] hover:shadow-lg transition-all duration-200">
+      <div className="relative h-44 border-b border-[#243020] bg-gradient-to-r from-[#223522] to-[#1d2d1d]">
+        <span className={`absolute right-2.5 top-3 inline-flex h-5 items-center px-2 text-xs font-black uppercase ${badgeClasses[item.badgeType]}`}>
           {item.badge}
         </span>
-
-        <div className="flex h-full w-full items-center justify-center px-3">
-          <img
-            src={item.image}
-            alt={item.name}
-            className="max-h-[124px] w-auto max-w-full object-contain opacity-90"
-          />
+        <div className="flex h-full w-full items-center justify-center p-2">
+          <img src={item.image} alt={item.name} className="max-h-28 max-w-full flex-shrink-0 object-contain" />
         </div>
       </div>
-
-      <div className="px-[13px] pb-[12px] pt-[12px]">
-        <p className="text-[12px] leading-none text-[#9ea293]">{item.category}</p>
-
-        <h3 className="mt-[8px] whitespace-pre-line text-[18px] font-extrabold uppercase leading-[1.05] tracking-[-0.015em] text-[#f2efe7]">
+      <div className="p-4">
+        <p className="text-xs text-[#9ea293] uppercase tracking-wide">{item.category}</p>
+        <h3 className="mt-1.5 line-clamp-2 text-lg font-black uppercase tracking-tight text-[#f2efe7]">
           {item.name}
         </h3>
-
-        <div className="mt-[12px] space-y-[7px] text-[13px]">
-          <div className="flex items-center justify-between gap-3">
+        <div className="mt-3 space-y-2 text-sm">
+          <div className="flex justify-between">
             <span className="text-[#9ea293]">Rank:</span>
-            <span className="font-medium text-[#f0c400]">{item.rank}</span>
+            <span className="font-semibold text-[#f0c400]">{item.rank}</span>
           </div>
-
-          <div className="flex items-center justify-between gap-3">
+          <div className="flex justify-between">
             <span className="text-[#9ea293]">Stock:</span>
-            <span className="font-medium text-[#00eb77]">{item.stock}</span>
+            <span className="font-semibold text-[#00eb77]">{item.stock}</span>
           </div>
         </div>
-
-        <button className="mt-[22px] flex h-[42px] w-full items-center justify-center border border-[#47653d] bg-[#294126] text-[15px] font-extrabold uppercase tracking-[-0.01em] text-[#f1eee7] transition hover:bg-[#32502f]">
+        <button className="mt-5 h-10 w-full rounded border border-[#47653d] bg-[#294126] text-sm font-black uppercase tracking-wide text-[#f1eee7] transition hover:bg-[#32502 Asc ]">
           View Specs
         </button>
       </div>
@@ -148,56 +133,41 @@ const EquipmentCard = ({ item }) => {
 
 const EquipmentCatalogSection = () => {
   return (
-    <section className="min-h-screen bg-[linear-gradient(90deg,#0d170e_0%,#071009_100%)] px-[33px] pt-[31px] pb-[28px] text-white">
-      {/* header */}
-      <div className="flex items-start gap-[16px]">
-        <div className="mt-[1px] h-[36px] w-[4px] bg-[#f0c400]" />
+    <section className="min-h-screen bg-gradient-to-b from-[#0d170e] to-[#071009] p-6 sm:p-8 lg:p-10 text-white">
+      <div className="flex items-start gap-4 mb-8">
+        <div className="mt-0.5 h-9 w-1 bg-[#f0c400]" />
         <div>
-          <h2 className="text-[28px] font-extrabold uppercase leading-none tracking-[0.035em] text-[#f3f0e8]">
-            EQUIPMENT CATALOG
+          <h2 className="text-3xl font-black uppercase tracking-wider text-[#f3f0e8]">
+            Equipment Catalog
           </h2>
-          <p className="mt-[13px] text-[15px] leading-none text-[#9ea293]">
+          <p className="mt-2 text-sm text-[#9ea293]">
             Requisition gear and weapons. Subject to clearance.
           </p>
         </div>
       </div>
 
-      {/* divider */}
-      <div className="mt-[24px] h-px w-full bg-[#2a3526]" />
-
-      {/* toolbar */}
-      <div className="mt-[32px] border border-[#2a3526] bg-[linear-gradient(90deg,#162317_0%,#121c12_100%)] px-[15px] py-[16px]">
+      <div className="border border-[#2a3526] bg-gradient-to-r from-[#162317] to-[#121c12] rounded-lg p-4 sm:p-6">
         <div className="flex flex-col gap-4 lg:flex-row lg:items-center">
-          <div className="flex h-[38px] flex-1 items-center gap-3 border border-[#33402d] bg-[#121a12] px-[12px]">
-            <Search size={16} strokeWidth={1.9} className="text-[#a1a496]" />
+          <div className="relative flex h-11 flex-1 items-center gap-2 border border-[#33402d] bg-[#121a12] px-4">
+            <Search size={16} strokeWidth={2} className="text-[#a1a496]" />
             <input
               type="text"
               placeholder="Search equipment..."
-              className="w-full bg-transparent text-[14px] text-[#f2efe7] outline-none placeholder:text-[#8f9385]"
+              className="flex-1 bg-transparent text-sm text-[#f2efe7] outline-none placeholder:text-[#8f9385]"
             />
           </div>
 
-          <button className="flex h-[38px] min-w-[180px] items-center justify-between border border-[#33402d] bg-[#121a12] px-[12px]">
-            <span className="flex items-center gap-3">
-              <SlidersHorizontal
-                size={15}
-                strokeWidth={1.9}
-                className="text-[#b8bbb0]"
-              />
-              <span className="text-[14px] text-[#f2efe7]">All Categories</span>
+          <button className="flex h-11 min-w-[160px] items-center justify-between border border-[#33402d] bg-[#121a12] px-4 text-sm">
+            <span className="flex items-center gap-2">
+              <SlidersHorizontal size={14} strokeWidth={2} className="text-[#b8bbb0]" />
+              All Categories
             </span>
-
-            <ChevronDown
-              size={16}
-              strokeWidth={1.9}
-              className="text-[#b8bbb0]"
-            />
+            <ChevronDown size={15} strokeWidth={2} className="text-[#b8bbb0]" />
           </button>
         </div>
       </div>
 
-      {/* cards */}
-      <div className="mt-[32px] grid grid-cols-1 gap-x-[24px] gap-y-[24px] md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {equipmentItems.map((item) => (
           <EquipmentCard key={item.id} item={item} />
         ))}
@@ -206,12 +176,5 @@ const EquipmentCatalogSection = () => {
   );
 };
 
-import DashboardLayout from "../components/layout/DashboardLayout";
+export default EquipmentCatalogSection;
 
-const EquipmentCatalog = () => {
-  return <DashboardLayout>
-    <EquipmentCatalogSection />
-  </DashboardLayout>;
-};
-
-export default EquipmentCatalog;

@@ -19,47 +19,31 @@ const ShieldLogo = ({ className = "" }) => {
 
 const HeroSection = () => {
   return (
-    <section className="relative  overflow-hidden bg-[#071009]">
-      {/* base background */}
-      <div className="absolute inset-0 bg-[#071009]" />
+    <section className="relative bg-[#071009]">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#071009] via-[#0c160d] to-[#071009]" />
+      <div className="relative z-10 flex min-h-[80vh] items-center justify-center px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto w-full max-w-4xl text-center">
+          <ShieldLogo className="mx-auto mb-6 h-16 w-16 text-[#d1aa10] sm:h-20 sm:w-20 md:mb-8" />
 
-      {/* center glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(22,38,23,0.34)_0%,rgba(10,18,11,0.94)_55%,rgba(6,12,8,1)_100%)]" />
-
-      {/* left/right soft vertical glow */}
-      <div className="absolute inset-y-0 left-0 w-[16%] bg-[linear-gradient(90deg,rgba(18,36,22,0.28)_0%,rgba(18,36,22,0.12)_35%,rgba(18,36,22,0)_100%)]" />
-      <div className="absolute inset-y-0 right-0 w-[16%] bg-[linear-gradient(270deg,rgba(18,36,22,0.22)_0%,rgba(18,36,22,0.08)_35%,rgba(18,36,22,0)_100%)]" />
-
-      {/* subtle top fade */}
-      <div className="absolute inset-x-0 top-0 h-[120px] bg-[linear-gradient(180deg,rgba(13,22,14,0.28)_0%,rgba(13,22,14,0)_100%)]" />
-
-      <div className="relative z-10 flex min-h-[calc(100vh-62px)] items-center justify-center px-4 sm:px-6">
-        <div className="mx-auto flex w-full max-w-[1180px] flex-col items-center pb-[78px] pt-[28px] text-center">
-          <ShieldLogo className="mb-[34px] h-[78px] w-[78px] text-[#d1aa10] sm:h-[84px] sm:w-[84px] md:mb-[40px] md:h-[90px] md:w-[90px]" />
-
-          <h1 className="uppercase leading-[0.94]">
-            <span className="block text-[64px] font-extrabold tracking-[-0.03em] text-[#ece8dc] sm:text-[78px] md:text-[99px] lg:text-[104px] xl:text-[108px]">
+          <h1 className="mb-6 uppercase leading-tight tracking-tight">
+            <span className="block text-5xl font-black text-[#ece8dc] sm:text-6xl lg:text-7xl">
               Mission Command
             </span>
-            <span className="mt-[2px] block text-[64px] font-extrabold tracking-[-0.03em] text-[#d1aa10] sm:text-[78px] md:text-[99px] lg:text-[104px] xl:text-[108px]">
+            <span className="block text-5xl font-black text-[#d1aa10] sm:text-6xl lg:text-7xl">
               Central
             </span>
           </h1>
 
-          <p className="mt-[30px] max-w-[820px] px-2 text-[23px] font-medium leading-[1.35] text-[#9c9d91] sm:text-[24px] md:mt-[32px] md:text-[26px]">
-            Secure internal portal strictly restricted to registered United
-            States Army personnel. Unauthorized access is prohibited.
+          <p className="mx-auto mb-8 max-w-2xl px-4 text-lg font-medium leading-relaxed text-[#9c9d91] sm:text-xl md:px-0">
+            Secure internal portal strictly restricted to registered United States Army personnel. Unauthorized access is prohibited.
           </p>
 
-          <div className="mt-[56px] flex flex-col items-center gap-3.5 sm:flex-row sm:gap-4">
-            <button className="group flex h-[56px] min-w-[252px] items-center justify-center gap-3 border border-[#d1aa10] bg-[#d1aa10] px-7 text-[20px] font-extrabold uppercase tracking-[0.02em] text-[#111] transition duration-200 hover:brightness-110">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-6 justify-center">
+            <button className="group flex h-12 min-w-[240px] items-center justify-center gap-2 border border-[#d1aa10] bg-[#d1aa10] px-6 text-base font-black uppercase tracking-wide text-[#111] transition-all duration-200 hover:brightness-105">
               Authorized Sign In
-              <span className="text-[28px] leading-none transition-transform duration-200 group-hover:translate-x-1">
-                ›
-              </span>
+              <span className="transition-transform group-hover:translate-x-1">›</span>
             </button>
-
-            <button className="flex h-[56px] min-w-[286px] items-center justify-center border border-[#2f392d] bg-transparent px-7 text-[20px] font-semibold uppercase tracking-[0.01em] text-[#d8d5cc] transition duration-200 hover:border-[#465041] hover:bg-white/[0.03]">
+            <button className="h-12 min-w-[260px] border border-[#2f392d] bg-transparent px-6 text-base font-semibold uppercase tracking-wide text-[#d8d5cc] transition-all duration-200 hover:border-[#465041] hover:bg-white/5">
               Public Leave Application
             </button>
           </div>

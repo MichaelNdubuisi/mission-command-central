@@ -28,32 +28,24 @@ const values = [
   },
   {
     title: "RESPECT",
-    text: `Treat people as they should be treated. In the Soldier's Code, we pledge to "treat others with dignity and respect while expecting others to do the same."`,
+    text: "Treat people as they should be treated. In the Soldier's Code, we pledge to \"treat others with dignity and respect while expecting others to do the same.\"",
   },
 ];
 
 const ValuesSection = () => {
   return (
-    <section className="w-full bg-[#0b140d] px-8 pt-[190px] pb-[160px] md:px-10 md:pt-[220px] md:pb-[180px]">
-      <div className="mx-auto max-w-[1366px]">
-        <div className="grid grid-cols-1 gap-y-20 md:grid-cols-3 md:gap-x-10 lg:gap-x-16">
+    <section className="bg-[#0b140d] py-20 px-6 md:py-24 md:px-8 lg:px-12">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-x-8 lg:gap-x-12">
           {values.map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center text-center"
-            >
-              {/* ICON */}
-              <div className="mb-10 flex h-[68px] w-[68px] items-center justify-center rounded-full border border-[#6b5b09]/60 bg-[#312b09]/20">
-                <ShieldIcon className="h-[26px] w-[26px] text-[#d1aa10]" />
+            <div key={index} className="text-center hover:brightness-105 transition-all duration-200">
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-[#6b5b09]/50 bg-[#312b09]/10">
+                <ShieldIcon className="h-7 w-7 text-[#d1aa10]" />
               </div>
-
-              {/* TITLE */}
-              <h3 className="mb-5 text-[32px] font-extrabold uppercase tracking-[-0.02em] text-[#f0eee6]">
+              <h3 className="mb-4 text-3xl font-bold uppercase tracking-tight text-[#f0eee6]">
                 {item.title}
               </h3>
-
-              {/* TEXT */}
-              <p className="max-w-[340px] text-[20px] font-medium leading-[1.65] text-[#a4a597]">
+              <p className="max-w-md text-base font-medium leading-relaxed text-[#a4a597]">
                 {item.text}
               </p>
             </div>

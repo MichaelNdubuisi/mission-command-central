@@ -4,6 +4,9 @@ import Dashboard from "./pages/Dashboard";
 import EquipmentCatalog from "./pages/EquipmentCatalog";
 import LeaveApplications from "./pages/LeaveApplications";
 import LeaveApplicationForm from "./pages/LeaveApplicationForm";
+import Orders from "./pages/Orders";
+import Announcements from "./pages/Announcements";
+import Profile from "./pages/Profile";
 import DashboardLayout from "./components/layout/DashboardLayout";
 
 function App() {
@@ -29,6 +32,21 @@ function App() {
         <Route path="/leave/apply" element={
           <DashboardLayout>
             <LeaveApplicationForm />
+          </DashboardLayout>
+        } />
+        <Route path="/orders" element={
+          <DashboardLayout>
+            <Orders />
+          </DashboardLayout>
+        } />
+        <Route path="/announcements" element={
+          <DashboardLayout>
+            <Announcements />
+          </DashboardLayout>
+        } />
+        <Route path="/profile" element={
+          <DashboardLayout>
+            <Profile />
           </DashboardLayout>
         } />
       </Routes>

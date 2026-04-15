@@ -1,3 +1,5 @@
+import { useAuth } from "../../contexts/AuthContext";
+
 const ShieldLogo = ({ className = "" }) => {
   return (
     <svg
@@ -16,19 +18,38 @@ const ShieldLogo = ({ className = "" }) => {
   );
 };
 
-const Navbar = () => {
+
+const Navbar = ({ className = "" }) => {
+  const { isAuthenticated, setToggleSidebar } = useAuth();
+
+  const handleMenuClick = () => {
+    setToggleSidebar(prev => !prev);
+  };
+
   return (
-    <header className="w-full border-b border-[#273121] bg-[#0b140d]">
-      <div className="mx-auto flex h-[62px] max-w-[1366px] items-center justify-between px-6 md:px-10">
-        <div className="flex items-center gap-3">
-          <ShieldLogo className="h-8 w-8 text-[#d4aa11]" />
-          <p className="text-[22px] font-extrabold uppercase tracking-[0.02em] text-[#e7e5dd]">
-            USA Army Portal
+    <header className={`w-full border-b border-[#273121] bg-[#0b140d] shadow-sm ${className}`}>
+      <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-3 hover:brightness-105 transition-all duration-200">
+          <ShieldLogo className="h-6 w-6 text-[#d4aa11] flex-shrink-0 lg:h-7 lg:w-7" />
+          <p className="text-lg font-black uppercase tracking-tight text-[#e7e5dd] lg:text-xl hover:text-[#f0c400] transition-colors duration-200">
+            Army Portal
           </p>
         </div>
 
-        <button className="border border-[#d4aa11] bg-[#d4aa11] px-6 py-2 text-[16px] font-extrabold uppercase tracking-[0.06em] text-black transition duration-300 hover:opacity-90">
-          Sign In
+        {!isAuthenticated && (
+          <button className="hidden lg:block h-10 border border-[#d4aa11] bg-[#d4aa11] px-6 py-1.5 text-sm font-black uppercase tracking-wider text-black transition-all duration-200 hover:brightness-105 hover:shadow-md">
+            Sign In
+          </button>
+        )}
+
+        <button 
+          onClick={handleMenuClick}
+          className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
+          aria-label="Open menu"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
         </button>
       </div>
     </header>
